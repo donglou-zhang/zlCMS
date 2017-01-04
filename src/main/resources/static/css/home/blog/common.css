@@ -1,0 +1,299 @@
+body{
+	height: 100%;
+	font-size: 1.1em;
+	background-color: rgba(234,234,234,0.5);
+}
+
+/*登录界面css begin*/
+.login_panel{
+	width: 100%;
+	min-height: 596px;
+	position: fixed;
+	height: 100%;
+	z-index: 1001;
+	display: none;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.input_login_panel{
+	position: relative;
+	background: rgba(63,119,119,0.8);
+	margin: auto;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 150px;
+	width: 360px;
+	height: auto;
+	border-radius: 3px;
+	box-shadow: 0px 0px 2px 2px #333;
+	border: 1px solid #FFFFFF;
+}
+
+.login_title{
+	height: 80px;
+	background: rgba(69,162,162,0.8);
+	font-family: "Times New Roman",Georgia,Serif;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 80px;
+	color: #FFFFFF;
+}
+
+.login_input{
+	height: auto;
+	margin-top: 20px;
+}
+
+#username_input,#password_input{
+	height: 40px;
+	width: 240px;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 3px;
+	margin: 10px 0px;
+}
+
+.btn_login{
+	margin: 10px 0;
+	font-size: 24px;
+	width: 90px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.show_info{
+	width: 360px;
+	height: 20px;
+	font-size: 16px;
+	text-align: center;
+	color: #FF0808;
+}
+
+#a_regist{
+	width: 360px;
+	height: 30px;
+	line-height: 30px;
+	padding-right: 5px;
+	font-size: 18px;
+	text-align: right;
+	background: rgba(69,162,162,0.8);
+	color: #FFFFFF;
+}
+
+#a_regist a{
+	color: #FFFFFF;
+}
+
+
+/*登录界面css end*/
+
+.page{
+	
+}
+
+.header{
+	background-image: url("../../../images/home/black_bg.png");
+	overflow: hidden;
+	padding: 0;
+}
+
+.introduce{	
+	min-height: 300px;	
+}
+
+.logo{
+	width: 100%;
+	min-height: 220px;
+}
+
+.label_area{
+	width: 100%;
+	margin-top: 20px;
+	min-height: 50px;
+	padding: 15px;
+}
+
+.self_label{
+	position: relative;
+	width: 250px;
+	min-height: 50px;
+	padding-left: 10px;
+}
+
+.self_label span{
+	margin: 5px;
+	font-size: 1.4em;
+	background-color: #961d1d;
+	color: black;
+	font-family: "Microsoft YaHei","Helvetica Neue",SimSun;
+}
+
+.menu{
+	font-family: "Microsoft Yahei";
+	background-color: rgba(160,160,160,0.8) !important;
+	margin-top: 20px;
+}
+
+.menu_bar{
+	font-size: 16px;
+}
+
+#bs-navbar ul{
+	margin-left: 56px;
+}
+
+.login_area{
+	margin-right: 10px !important;
+}
+
+.login_area span{
+	padding: 15px;
+	line-height: 20px;
+	position: relative;
+	display: block;
+	cursor: default;
+}
+
+.main{
+	color: #FFFFFF;
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.side{
+	
+}
+
+.personal_information, .blog_topic{
+	background-color: #2D2929;
+	padding-top: 1px;
+}
+
+.blog_topic{
+	margin-top: 30px;
+}
+
+.side_label{
+	background-color: rgba(177,27,27,0.8);
+	min-height: 30px;
+	line-height: 30px;
+	margin: 3px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.side_content{
+	min-height: 150px;
+	margin: 3px;
+	font-size: 15px;
+}
+
+.side_content div{
+	padding: 4px 0px 4px 10px;
+}
+
+.side_content ul{
+	padding-left: 0;
+}
+
+.side_content ul li{
+	list-style: none;
+	padding: 4px 0px 4px 0px;
+	border-bottom: 1px dotted gray;
+}
+
+.side_content ul li a{
+	color: #FFFFFF;
+	padding-left: 10px;
+}
+
+.content{
+	height: auto;
+}
+
+#brief_intro div:first-child, .article_info{
+	margin-top: 0px !important;
+}
+
+.brief_article{
+	min-height: 260px;
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+	border: 1px solid black;
+	background-color: #2D2929;
+	-moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:15px;            /* W3C syntax */
+}
+
+.content_label{
+	padding: 5px 25px;
+	color: #da0000;
+	font-size: 18px;
+}
+
+.article_title{
+	font-size: 20px;
+}
+.article_time{
+	color:white;
+}
+
+.content_introduction{
+	padding: 5px 25px;
+	font-size: 14px;
+	font-family: "Microsoft YaHei","Helvetica Neue",SimSun;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+}
+
+.content_skip{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	font-size: 14px;
+}
+
+.content_skip a{
+	float: right;
+	margin:  5px 25px;
+	color: #da0000;
+}
+
+.footer{
+	margin: 20px 0;
+}
+
+.foot{
+	text-align: center;
+}
+
+.foot ul li{
+	margin-top: 10px;
+	list-style: none;
+}
+
+.margin_auto{
+	margin: 0 auto;	
+}
+
+.padding_auto{
+	padding: 0 auto;
+}
+
+.remove_margin{
+	margin: 0;
+}
+
+.remove_padding{
+	padding: 0
+}
+
+.remove_margin_padding{
+	margin: 0;
+	padding: 0;
+}

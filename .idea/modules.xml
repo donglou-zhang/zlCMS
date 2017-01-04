@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zlCMS.iml" filepath="$PROJECT_DIR$/.idea/modules/zlCMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zlCMS_main.iml" filepath="$PROJECT_DIR$/.idea/modules/zlCMS_main.iml" group="zlCMS" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zlCMS_test.iml" filepath="$PROJECT_DIR$/.idea/modules/zlCMS_test.iml" group="zlCMS" />
+    </modules>
+  </component>
+</project>
