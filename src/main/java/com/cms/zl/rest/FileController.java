@@ -22,6 +22,9 @@ public class FileController {
     @Value("${image.article.folder}")
     private String imageArticleFolder;
 
+    @Value("${image.adminAvatar.folder}")
+    private String adminAvatarFolder;
+
     @Value("${image.server}")
     private String imageServer;
 
@@ -35,6 +38,7 @@ public class FileController {
         try {
             File newFile = new File(imageArticleFolder + df.format(new Date()) + "&" + articleImageFile.getOriginalFilename());
 //            articleImageFile.transferTo(newFile); //存在bug，导致图片上传失败
+
             BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(newFile));
             out.write(articleImageFile.getBytes());
             out.flush();
@@ -43,6 +47,13 @@ public class FileController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return imageServer + "images/error.png";
+    }
+
+    @RequestMapping(value = "/uploadAdminAvatar", method = RequestMethod.POST)
+    public String handleAdminAvatarImageFile(MultipartFile adminAvatarImageFile) {
+        File avatarFile = new File(adminAvatarFolder + "avatar.png");
+        //TODO 将原来旧的头像删除，然后使用新的，统一命名为avatar.png
 
         return imageServer + "images/error.png";
     }

@@ -21,6 +21,7 @@ public class BlogController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView("/home/blog/index");
+
         return mav;
     }
 }

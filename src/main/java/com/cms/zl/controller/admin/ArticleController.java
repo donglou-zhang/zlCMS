@@ -47,7 +47,6 @@ public class ArticleController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView addArticle(@Valid ArticleForm articleForm, BindingResult result, Principal principal) throws ControllerParamException {
-        System.out.println("1: " + articleForm.getTitle()+", 2: "+articleForm.getKind()+", 3: "+articleForm.getContent());
         if(result.hasErrors()) throw new ControllerParamException("编辑文章参数错误");
         Article article = articleService.create(articleForm.getTitle(), articleForm.getKind(), articleForm.getContent());
         ModelAndView mav = new ModelAndView("redirect:/admin/article/list");

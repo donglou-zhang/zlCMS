@@ -34,11 +34,51 @@
 
             <div class="page-content">
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <form class="form-horizontal" role="form" id="profileForm" action="/admin/profile" method="post">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="avatar">头像</label>
+                                <div class="col-sm-11">
+                                    <input type="file" id="avatar" name="avatar"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="native_place">籍贯</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="native_place" name="native_place" placeholder="籍贯" class="col-xs-6 col-sm-3" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="education">教育</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="education" name="education" placeholder="当前学校" class="col-xs-6 col-sm-3" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="studies">研究</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="studies" name="studies" placeholder="研究方向" class="col-xs-6 col-sm-3" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="email">邮箱</label>
+                                <div class="col-sm-11">
+                                    <input type="email" id="email" name="email" placeholder="邮箱" class="col-xs-6 col-sm-3" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="label">标签</label>
+                                <div class="col-sm-11">
+                                    <input type="text" id="label" name="label" placeholder="标签" class="col-xs-6 col-sm-3" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-1 col-sm-11">
+                                    <input class="btn btn-info " type="submit" value="保存">
+                                    </input>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 

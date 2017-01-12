@@ -39,7 +39,97 @@
             <div class="page-content">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="widget-box transparent">
+                            <div class="widget-header widget-header-flat">
+                                <h4 class="lighter">
+                                    <i class="icon-star orange"></i>
+                                    所有用户
+                                </h4>
 
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="icon-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main no-padding">
+                                    <table class="table table-bordered table-striped">
+                                        <thead class="thin-border-bottom">
+                                        <tr>
+                                            <th class="center">
+                                                <label>
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </th>
+
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                用户名
+                                            </th>
+
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                邮箱
+                                            </th>
+
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                身份
+                                            </th>
+
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                编辑
+                                            </th>
+
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                删除
+                                            </th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr>
+                                            <td class="center">
+                                                <label>
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </td>
+
+                                            <td>HDFS的读写流程</td>
+
+                                            <td>
+                                                zhangleisoft2012@163.com
+                                            </td>
+
+                                            <td>
+                                                普通用户
+                                            </td>
+
+                                            <td>
+                                                <button class="btn btn-xs btn-primary">
+                                                    <i class="icon-pencil align-top smaller"></i>
+                                                    编辑
+                                                </button>
+                                            </td>
+
+                                            <td>
+                                                <button class="btn btn-xs btn-danger">
+                                                    <i class="icon-trash align-top smaller"></i>
+                                                    删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div><!-- /widget-box -->
                     </div>
                 </div>
 

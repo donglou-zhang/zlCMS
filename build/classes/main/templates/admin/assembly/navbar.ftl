@@ -17,7 +17,7 @@
             <ul class="nav ace-nav">
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="/images/admin/user.jpg" alt="Jason's Photo" />
+                        <img class="nav-user-photo" src="http://127.0.0.1:8088/adminAvatar/avatar.png" alt="admin avatar" />
                         <span class="user-info">
 									<small>你好</small>
 									<#if username??>

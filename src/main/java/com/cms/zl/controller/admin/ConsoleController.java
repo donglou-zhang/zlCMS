@@ -18,10 +18,4 @@ public class ConsoleController {
         ModelAndView mav = new ModelAndView("admin/index");
         return mav;
     }
-
-    @RequestMapping(value = "/info", method = RequestMethod.GET)
-    public ModelAndView adminInfo() {
-        ModelAndView mav = new ModelAndView("admin/infoSet");
-        return mav;
-    }
 }
