@@ -36,6 +36,20 @@ public class Profile {
     @Column(length = 64)
     private String studies;//研究方向
 
+    public Profile() {
+
+    }
+
+    public Profile(int id, String avatar, String education, String email, String label, String native_place, String studies) {
+        this.id = id;
+        this.avatar = avatar;
+        this.education = education;
+        this.email = email;
+        this.label = label;
+        this.native_place = native_place;
+        this.studies = studies;
+    }
+
     public int getId() {
         return id;
     }
