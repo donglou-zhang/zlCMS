@@ -93,9 +93,21 @@
 								个人资料
 							</div>
 							<div class="side_content">
-								<div>籍贯： 安徽</div>
-								<div>教育： 北京航空航天大学软件学院</div>
-								<div>邮箱： zhangleisoft2012@163.com</div>
+								<#if profile.native_place??>
+                                    <div>籍贯： ${profile.native_place}</div>
+								</#if>
+
+								<#if profile.education??>
+                                    <div>教育： ${profile.education}</div>
+								</#if>
+
+								<#if profile.email??>
+                                    <div>邮箱： ${profile.email}</div>
+								</#if>
+
+								<#if profile.studies??>
+                                    <div>研究： ${profile.studies}</div>
+								</#if>
 							</div>
 						</div>
 						<div class="blog_topic">
