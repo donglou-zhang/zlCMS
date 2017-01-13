@@ -45,31 +45,56 @@
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="native_place">籍贯</label>
                                 <div class="col-sm-11">
-                                    <input type="text" id="native_place" name="native_place" placeholder="籍贯" class="col-xs-6 col-sm-3" />
+                                    <input type="text" id="native_place" name="native_place" placeholder="籍贯" value="${profile.native_place}" class="col-xs-6 col-sm-3" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="education">教育</label>
                                 <div class="col-sm-11">
-                                    <input type="text" id="education" name="education" placeholder="当前学校" class="col-xs-6 col-sm-3" />
+                                    <input type="text" id="education" name="education" placeholder="当前学校" value="${profile.education}" class="col-xs-6 col-sm-3" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="studies">研究</label>
                                 <div class="col-sm-11">
-                                    <input type="text" id="studies" name="studies" placeholder="研究方向" class="col-xs-6 col-sm-3" />
+                                    <input type="text" id="studies" name="studies" placeholder="研究方向" value="${profile.studies}" class="col-xs-6 col-sm-3" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="email">邮箱</label>
                                 <div class="col-sm-11">
-                                    <input type="email" id="email" name="email" placeholder="邮箱" class="col-xs-6 col-sm-3" />
+                                    <input type="email" id="email" name="email" placeholder="邮箱" value="${profile.email}" class="col-xs-6 col-sm-3" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="label">标签</label>
                                 <div class="col-sm-11">
-                                    <input type="text" id="label" name="label" placeholder="标签" class="col-xs-6 col-sm-3" />
+                                    <#list labels as label>
+                                        <span class="input-icon">
+                                            <input type="text" id="label${label_index}" value="${label}" />
+                                            <i class="icon-leaf blue"></i>
+                                    </span>
+                                    </#list>
+                                    <#--<span class="input-icon">-->
+                                        <#--<input type="text" id="labe0" />-->
+                                        <#--<i class="icon-leaf blue"></i>-->
+                                    <#--</span>-->
+
+                                    <#--<span class="input-icon">-->
+                                        <#--<input type="text" id="label1" />-->
+                                        <#--<i class="icon-leaf green"></i>-->
+                                    <#--</span>-->
+
+                                    <#--<span class="input-icon">-->
+                                        <#--<input type="text" id="label2" />-->
+                                        <#--<i class="icon-leaf red"></i>-->
+                                    <#--</span>-->
+
+                                    <#--<span class="input-icon">-->
+                                        <#--<input type="text" id="label3" />-->
+                                        <#--<i class="icon-leaf pink"></i>-->
+                                    <#--</span>-->
+                                    <input type="hidden" id="label" name="label"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -104,7 +129,10 @@
 <script src="/js/admin/ace/ace.min.js"></script>
 <script type="text/javascript">
     jQuery(function($) {
-
+        $("#profileForm").submit(function () {
+            var labels = $("#label0").val() + "&" + $("#label1").val() + "&" + $("#label2").val() + "&" + $("#label3").val()
+            $("#label").val(labels);
+        })
     })
 </script>
 </body><!-- area 1 -->
