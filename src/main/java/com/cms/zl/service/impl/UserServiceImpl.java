@@ -5,6 +5,8 @@ import com.cms.zl.repository.IUserRepository;
 import com.cms.zl.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -44,6 +46,7 @@ public class UserServiceImpl implements IUserService{
     }
 
     public Page<User> get(int page, int size) {
-        return null;
+        PageRequest request = new PageRequest(page, size, Sort.Direction.DESC, "createTime");
+        return userRepository.findAll(request);
     }
 }
