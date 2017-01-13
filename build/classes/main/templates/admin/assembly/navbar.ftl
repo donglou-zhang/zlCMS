@@ -32,7 +32,7 @@
 
                     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="/admin/info">
+                            <a href="/admin/profile">
                                 <i class="icon-cog"></i>
                                 设置
                             </a>

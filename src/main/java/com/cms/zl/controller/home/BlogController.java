@@ -31,6 +31,7 @@ public class BlogController {
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView("/home/blog/index");
         Profile profile = profileService.get(1);
+        if (profile == null) profile = new Profile();
         mav.addObject("profile", profile);
         return mav;
     }
