@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5226d985-6c1a-49ad-af31-9c65697d6591" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cms/zl/controller/admin/ProfileController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cms/zl/controller/admin/ProfileController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cms/zl/controller/home/BlogController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cms/zl/controller/home/BlogController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cms/zl/entity/Profile.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cms/zl/entity/Profile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/templates/admin/assembly/navbar.ftl" afterPath="$PROJECT_DIR$/build/classes/main/templates/admin/assembly/navbar.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/templates/admin/infoSet.ftl" afterPath="$PROJECT_DIR$/build/classes/main/templates/admin/infoSet.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/templates/home/blog/index.ftl" afterPath="$PROJECT_DIR$/build/classes/main/templates/home/blog/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cms/zl/controller/home/BlogController.java" afterPath="$PROJECT_DIR$/src/main/java/com/cms/zl/controller/home/BlogController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl" />
     </list>
     <ignored path="zlCMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +64,15 @@
             <state relative-caret-position="546">
               <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
               <folding>
-                <element signature="e#908#909#0" expanded="true" />
-                <element signature="e#955#956#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#580#581#0" expanded="false" />
+                <element signature="e#638#639#0" expanded="false" />
+                <element signature="e#697#698#0" expanded="false" />
+                <element signature="e#751#752#0" expanded="false" />
+                <element signature="e#799#800#0" expanded="false" />
+                <element signature="e#851#852#0" expanded="false" />
+                <element signature="e#1003#1004#0" expanded="false" />
+                <element signature="e#1047#1048#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,7 +84,8 @@
             <state relative-caret-position="780">
               <caret line="47" column="54" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="54" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="false" />
+                <element signature="e#1206#1207#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -95,7 +96,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="702">
               <caret line="48" column="87" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#694#695#0" expanded="false" />
+                <element signature="e#746#747#0" expanded="false" />
+                <element signature="e#806#807#0" expanded="false" />
+                <element signature="e#878#879#0" expanded="false" />
+                <element signature="e#912#913#0" expanded="false" />
+                <element signature="e#960#961#0" expanded="false" />
+                <element signature="e#1010#1011#0" expanded="false" />
+                <element signature="e#1072#1073#0" expanded="false" />
+                <element signature="e#1109#1110#0" expanded="false" />
+                <element signature="e#1150#1151#0" expanded="false" />
+                <element signature="e#1187#1188#0" expanded="false" />
+                <element signature="e#1228#1229#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,16 +120,32 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#627#628#0" expanded="false" />
+                <element signature="e#652#653#0" expanded="false" />
+                <element signature="e#692#693#0" expanded="false" />
+                <element signature="e#725#726#0" expanded="false" />
+                <element signature="e#765#766#0" expanded="false" />
+                <element signature="e#798#799#0" expanded="false" />
+                <element signature="e#834#835#0" expanded="false" />
+                <element signature="e#862#863#0" expanded="false" />
+                <element signature="e#917#918#0" expanded="false" />
+                <element signature="e#961#962#0" expanded="false" />
+                <element signature="e#1016#1017#0" expanded="false" />
+                <element signature="e#1060#1061#0" expanded="false" />
+                <element signature="e#1155#1156#0" expanded="false" />
+                <element signature="e#1225#1226#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userList.ftl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userList.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="161" column="34" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
+            <state relative-caret-position="289">
+              <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -133,7 +164,7 @@
       <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cms/zl/controller/admin/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="211">
               <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
@@ -162,7 +193,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cms/zl/controller/home/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
@@ -604,8 +635,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cms/zl/service/impl/ProfileServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cms/zl/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cms/zl/controller/admin/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/cms/zl/controller/home/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl" />
       </list>
     </option>
   </component>
@@ -755,6 +786,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sign" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1607,15 +1642,15 @@
       <workItem from="1484191361270" duration="473000" />
       <workItem from="1484191850430" duration="2227000" />
       <workItem from="1484201111134" duration="3967000" />
-      <workItem from="1484270346934" duration="825000" />
+      <workItem from="1484270346934" duration="1659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134971000" />
+    <option name="totallyTimeSpent" value="135805000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1837,32 +1872,6 @@
         <state relative-caret-position="494">
           <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="31" />
           <folding>
-            <element signature="e#1138#1139#0" expanded="false" />
-            <element signature="e#1163#1164#0" expanded="false" />
-            <element signature="e#1196#1197#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="false" />
-            <element signature="e#1257#1258#0" expanded="false" />
-            <element signature="e#1286#1287#0" expanded="false" />
-            <element signature="e#1330#1331#0" expanded="false" />
-            <element signature="e#1366#1367#0" expanded="false" />
-            <element signature="e#1405#1406#0" expanded="false" />
-            <element signature="e#1440#1441#0" expanded="false" />
-            <element signature="e#1496#1497#0" expanded="false" />
-            <element signature="e#1544#1545#0" expanded="false" />
-            <element signature="e#1580#1581#0" expanded="false" />
-            <element signature="e#1612#1613#0" expanded="false" />
-            <element signature="e#1662#1663#0" expanded="false" />
-            <element signature="e#1704#1705#0" expanded="false" />
-            <element signature="e#1736#1737#0" expanded="false" />
-            <element signature="e#1764#1765#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1840#1841#0" expanded="false" />
-            <element signature="e#1872#1873#0" expanded="false" />
-            <element signature="e#1900#1901#0" expanded="false" />
-            <element signature="e#1942#1943#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2010#2011#0" expanded="false" />
-            <element signature="e#2040#2041#0" expanded="false" />
             <element signature="e#2086#2087#0" expanded="false" />
             <element signature="e#2124#2125#0" expanded="false" />
           </folding>
@@ -1987,8 +1996,15 @@
         <state relative-caret-position="546">
           <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#580#581#0" expanded="false" />
+            <element signature="e#638#639#0" expanded="false" />
+            <element signature="e#697#698#0" expanded="false" />
+            <element signature="e#751#752#0" expanded="false" />
+            <element signature="e#799#800#0" expanded="false" />
+            <element signature="e#851#852#0" expanded="false" />
+            <element signature="e#1003#1004#0" expanded="false" />
+            <element signature="e#1047#1048#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2005,7 +2021,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#627#628#0" expanded="false" />
+            <element signature="e#652#653#0" expanded="false" />
+            <element signature="e#692#693#0" expanded="false" />
+            <element signature="e#725#726#0" expanded="false" />
+            <element signature="e#765#766#0" expanded="false" />
+            <element signature="e#798#799#0" expanded="false" />
+            <element signature="e#834#835#0" expanded="false" />
+            <element signature="e#862#863#0" expanded="false" />
+            <element signature="e#917#918#0" expanded="false" />
+            <element signature="e#961#962#0" expanded="false" />
+            <element signature="e#1016#1017#0" expanded="false" />
+            <element signature="e#1060#1061#0" expanded="false" />
+            <element signature="e#1155#1156#0" expanded="false" />
+            <element signature="e#1225#1226#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2022,7 +2054,8 @@
         <state relative-caret-position="780">
           <caret line="47" column="54" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="false" />
+            <element signature="e#1206#1207#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2031,15 +2064,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="48" column="87" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="161" column="34" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#694#695#0" expanded="false" />
+            <element signature="e#746#747#0" expanded="false" />
+            <element signature="e#806#807#0" expanded="false" />
+            <element signature="e#878#879#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#960#961#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1072#1073#0" expanded="false" />
+            <element signature="e#1109#1110#0" expanded="false" />
+            <element signature="e#1150#1151#0" expanded="false" />
+            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#1228#1229#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2047,14 +2086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6786">
           <caret line="51" column="55" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cms/zl/controller/admin/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2073,6 +2104,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cms/zl/controller/admin/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/userList.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
           <folding />
         </state>
       </provider>

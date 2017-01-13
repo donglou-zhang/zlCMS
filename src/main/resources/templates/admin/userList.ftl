@@ -149,11 +149,19 @@
                                 </a>
                             </li>
 
-                            <li class="prev">
-                                <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage-1}">
-                                    <i class="icon-angle-left"></i>
-                                </a>
-                            </li>
+                            <#if currentPage = 1>
+                                <li class="prev disabled">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage-1}">
+                                        <i class="icon-angle-left"></i>
+                                    </a>
+                                </li>
+                            <#else>
+                                <li class="prev">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage-1}">
+                                        <i class="icon-angle-left"></i>
+                                    </a>
+                                </li>
+                            </#if>
 
                             <#if currentPage gt 1>
                                 <li>
@@ -172,11 +180,19 @@
                                 </li>
                             </#if>
 
-                            <li class="next">
-                                <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage+1}">
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
+                            <#if currentPage+1 gt maxPage>
+                                <li class="next disabled">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage+1}">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                </li>
+                            <#else>
+                                <li class="next">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage+1}">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                </li>
+                            </#if>
 
                             <li class="next">
                                 <a href="http://127.0.0.1:8088/admin/user/list?page=${maxPage}">
@@ -209,6 +225,9 @@
 <script src="/js/admin/ace/ace-elements.min.js"></script>
 <script src="/js/admin/ace/ace.min.js"></script>
 <script type="text/javascript">
+    $(".disabled").click(function (event) {
+        event.preventDefault();
+    });
     jQuery(function($) {
 
     })
