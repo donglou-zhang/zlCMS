@@ -72,7 +72,7 @@
 
                                             <th>
                                                 <i class="icon-caret-right blue"></i>
-                                                邮箱
+                                                注册时间
                                             </th>
 
                                             <th>
@@ -93,43 +93,113 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr>
-                                            <td class="center">
-                                                <label>
-                                                    <input type="checkbox" class="ace" />
-                                                    <span class="lbl"></span>
-                                                </label>
-                                            </td>
+                                        <#list users as user>
+                                            <tr>
+                                                <td class="center">
+                                                    <label>
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </td>
 
-                                            <td>HDFS的读写流程</td>
+                                                <td>${user.username}</td>
 
-                                            <td>
-                                                zhangleisoft2012@163.com
-                                            </td>
+                                                <td>
+                                                    ${user.createTime}
+                                                </td>
+                                                <#if user.role = "user">
+                                                    <td>
+                                                        普通用户
+                                                    </td>
+                                                <#else>
+                                                    <td>
+                                                        管理员
+                                                    </td>
+                                                </#if>
 
-                                            <td>
-                                                普通用户
-                                            </td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-primary">
+                                                        <i class="icon-pencil align-top smaller"></i>
+                                                        编辑
+                                                    </button>
+                                                </td>
 
-                                            <td>
-                                                <button class="btn btn-xs btn-primary">
-                                                    <i class="icon-pencil align-top smaller"></i>
-                                                    编辑
-                                                </button>
-                                            </td>
-
-                                            <td>
-                                                <button class="btn btn-xs btn-danger">
-                                                    <i class="icon-trash align-top smaller"></i>
-                                                    删除
-                                                </button>
-                                            </td>
-                                        </tr>
+                                                <td>
+                                                    <button class="btn btn-xs btn-danger">
+                                                        <i class="icon-trash align-top smaller"></i>
+                                                        删除
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </#list>
                                         </tbody>
                                     </table>
                                 </div><!-- /widget-main -->
                             </div><!-- /widget-body -->
                         </div><!-- /widget-box -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="pagination pull-left">
+                            <li class="prev">
+                                <a href="http://127.0.0.1:8088/admin/user/list?page=1">
+                                    <i class="icon-double-angle-left"></i>
+                                </a>
+                            </li>
+
+                            <#if currentPage = 1>
+                                <li class="prev disabled">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage-1}">
+                                        <i class="icon-angle-left"></i>
+                                    </a>
+                                </li>
+                            <#else>
+                                <li class="prev">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage-1}">
+                                        <i class="icon-angle-left"></i>
+                                    </a>
+                                </li>
+                            </#if>
+
+                            <#if currentPage gt 1>
+                                <li>
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage-1}">${currentPage-1}</a>
+                                </li>
+                            </#if>
+
+
+                            <li  class="active">
+                                <a href="#">${currentPage}</a>
+                            </li>
+
+                            <#if currentPage lt maxPage>
+                                <li>
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage+1}">${currentPage+1}</a>
+                                </li>
+                            </#if>
+
+                            <#if currentPage+1 gt maxPage>
+                                <li class="next disabled">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage+1}">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                </li>
+                            <#else>
+                                <li class="next">
+                                    <a href="http://127.0.0.1:8088/admin/user/list?page=${currentPage+1}">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                </li>
+                            </#if>
+
+                            <li class="next">
+                                <a href="http://127.0.0.1:8088/admin/user/list?page=${maxPage}">
+                                    <i class="icon-double-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -155,6 +225,9 @@
 <script src="/js/admin/ace/ace-elements.min.js"></script>
 <script src="/js/admin/ace/ace.min.js"></script>
 <script type="text/javascript">
+    $(".disabled").click(function (event) {
+        event.preventDefault();
+    });
     jQuery(function($) {
 
     })
