@@ -16,4 +16,6 @@ public interface IArticleService {
     Article get(String id);
 
     Page<Article> getByKind(int page, int size, String kind);
+
+    Page<Article> get(int page, int size);
 }

@@ -38,8 +38,10 @@
                         <form class="form-horizontal" role="form" id="profileForm" action="/admin/profile" method="post">
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="avatar">头像</label>
-                                <div class="col-sm-11">
-                                    <input type="file" id="avatar" name="avatar"/>
+                                <div class="col-xs-6 col-sm-3">
+                                    <#--<input type="file" id="avatar" name="avatar"/>-->
+                                    <input type="file" id="avatar" name="avatar" />
+                                    <#--<input multiple="" type="file" id="avatar" name="avatar" />-->
                                 </div>
                             </div>
                             <div class="form-group">
@@ -128,12 +130,24 @@
 <script src="/js/admin/ace/ace-elements.min.js"></script>
 <script src="/js/admin/ace/ace.min.js"></script>
 <script type="text/javascript">
+
+
     jQuery(function($) {
+        $('#avatar').ace_file_input({
+            no_file:'No Image ...',
+            no_icon:'icon-picture',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false
+        });
+
         $("#profileForm").submit(function () {
             var labels = $("#label0").val() + "&" + $("#label1").val() + "&" + $("#label2").val() + "&" + $("#label3").val()
             $("#label").val(labels);
         })
-    })
+    });
 </script>
 </body><!-- area 1 -->
 </html>

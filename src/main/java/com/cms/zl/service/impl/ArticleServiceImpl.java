@@ -48,4 +48,8 @@ public class ArticleServiceImpl implements IArticleService{
     public Page<Article> getByKind(int page, int size, String kind) {
         return articleRepository.findByKind(kind, new PageRequest(page, size, Sort.Direction.DESC, "updateTime"));
     }
+
+    public Page<Article> get(int page, int size) {
+        return articleRepository.findAll(new PageRequest(page, size, Sort.Direction.DESC, "updateTime"));
+    }
 }

@@ -33,10 +33,13 @@
 					<div class="label_area">
 						<div class="col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
 							<div class="self_label margin_auto">
-								<span class="badge">旅游</span>	
-								<span class="badge">编程</span>
-								<span class="badge">健身</span>	
-								<span class="badge">北航</span>
+								<#list labels as label>
+                                    <span class="badge">${label}</span>
+								</#list>
+								<#--<span class="badge">旅游</span>	-->
+								<#--<span class="badge">编程</span>-->
+								<#--<span class="badge">健身</span>	-->
+								<#--<span class="badge">北航</span>-->
 							</div>
 						</div>
 					</div>
@@ -53,7 +56,7 @@
 				         </div>
 				         <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
 				           <ul class="nav navbar-nav">
-			           		 <li>				          				        
+			           		 <li class="active">
 			               		<a href="/blog/index">首页</a>
 			             	 </li>
 			             	 <li>				             
@@ -122,18 +125,20 @@
 						</div>
 					</div>
 					<div class="content col-sm-9 col-md-9 remove_padding" id="brief_intro">
-                        <div class="brief_article">
-                            <div class="content_label">
-								<span class="article_title">Hadoop读写流程</span>
-								<span class="article_time"><small>&nbsp;&nbsp;(2015-03-12 16:22)</small></span>
+						<#list articles as article>
+                            <div class="brief_article">
+                                <div class="content_label">
+                                    <span class="article_title">${article.title}</span>
+                                    <span class="article_time"><small>&nbsp;&nbsp;(${article.updateTime})</small></span>
+                                </div>
+                                <div class="content_introduction">
+									${article.summary}
+                                </div>
+                                <div class="content_skip">
+                                    <a href="/article?id=${article.id}" target="_blank">查看全文>></a>
+                                </div>
                             </div>
-                            <div class="content_introduction">
-							This is article content!
-                            </div>
-                            <div class="content_skip">
-                                <a href="#">查看全文>></a>
-                            </div>
-                        </div>
+						</#list>
 					</div>
 				</div>
 			</div>
