@@ -8,7 +8,7 @@
     <link href="/css/home/blog/ihover.css" rel="stylesheet">
     <link href="/css/home/blog/docs.min.css" rel="stylesheet">
     <link href="/css/home/blog/article.css" rel="stylesheet">
-    <title>博文</title>
+    <title>${article.title}</title>
 </head>
 <body>
 <div class="container page">
@@ -90,11 +90,14 @@
                 <div class="content col-sm-12 col-md-12 remove_padding" id="brief_intro">
                     <div class="article_info">
                         <div class="article_content_label">
-                            <span class="article_title">article.title</span>
-                            <span class="article_time"><small>&nbsp;&nbsp;(article.updateTime)</small></span>
+                            <span class="article_title">${article.title}</span>
+                            <span class="article_time"><small>&nbsp;&nbsp;(${article.updateTime})&nbsp;&nbsp;</small></span>
+                            <#if article.kind!="">
+                                <span class="label label-info arrowed-in-right arrowed"><small>${article.kind}</small></span>
+                            </#if>
                         </div>
                         <div class="article_content">
-                            article.summary
+                            ${article.content}
                         </div>
                         <div class="article_link">
                             <ul>
@@ -130,7 +133,7 @@
                                         <#--<label class="submit_comment" for="comment_content">${sessionScope.user.username }:</label>-->
                                         <textarea type="text" class="form-control" name="comment_content" id="comment_content"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-default submit_comment_btn" onclick="">提交</button>
+                                    <button type="submit" class="btn btn-default" onclick="">提交</button>
                                 </form>
                             </div>
                         </div>

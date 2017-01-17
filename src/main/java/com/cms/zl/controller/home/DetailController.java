@@ -1,5 +1,6 @@
 package com.cms.zl.controller.home;
 
+import com.cms.zl.entity.Article;
 import com.cms.zl.entity.Profile;
 import com.cms.zl.service.IArticleService;
 import com.cms.zl.service.IProfileService;
@@ -34,6 +35,10 @@ public class DetailController {
         String[] labelList = new String[4];
         labelList = profile.getLabel().split("&");
         mav.addObject("labels", labelList);
+
+        Article article = articleService.get(id);
+        mav.addObject("article", article);
+
         return mav;
     }
 }

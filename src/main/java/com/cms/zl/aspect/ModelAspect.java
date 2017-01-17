@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.Entity;
+
 /**
  * Created by Vincent on 2016/12/29.
  */

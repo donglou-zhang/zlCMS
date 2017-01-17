@@ -24,6 +24,11 @@
 	padding: 5px 25px;
 	font-size: 14px;
 	font-family: "Microsoft YaHei","Helvetica Neue",SimSun;
+    margin-top: 20px;
+}
+
+.article_title{
+    color: #5bc0de;
 }
 
 .article_link{
@@ -34,6 +39,10 @@
 .article_link ul li{
 	list-style: none;
 	margin: 5px 0;
+}
+
+.article_link ul li a{
+    color: #5bc0de;
 }
 
 .article_comment{

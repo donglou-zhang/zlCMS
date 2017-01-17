@@ -58,7 +58,7 @@
                 </li>
 
                 <li>
-                    <a href="/admin/user/edit">
+                    <a href="/admin/user/add">
                         <i class="icon-double-angle-right"></i>
                         添加用户
                     </a>

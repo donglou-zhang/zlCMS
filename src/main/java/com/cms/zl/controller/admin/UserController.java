@@ -49,9 +49,15 @@ public class UserController {
         return mav;
     }
 
-    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public ModelAndView addUser() {
         ModelAndView mav = new ModelAndView("admin/addUser");
+        return mav;
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public ModelAndView editUser(@RequestParam(value = "id")String id) {
+        ModelAndView mav = new ModelAndView("admin/userEdit");
         return mav;
     }
 }

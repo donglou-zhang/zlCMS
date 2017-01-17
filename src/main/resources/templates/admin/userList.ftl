@@ -118,7 +118,7 @@
                                                 </#if>
 
                                                 <td>
-                                                    <button class="btn btn-xs btn-primary">
+                                                    <button class="btn btn-xs btn-primary" onclick="window.location.href='edit?id=${user.id}'">
                                                         <i class="icon-pencil align-top smaller"></i>
                                                         编辑
                                                     </button>
@@ -228,6 +228,12 @@
     $(".disabled").click(function (event) {
         event.preventDefault();
     });
+
+    function editPage(userId) {
+        console.log(userId);
+//        window.location.href = "http://127.0.0.1:8088/admin/user/edit?id=" + userId;
+    }
+
     jQuery(function($) {
 
     })

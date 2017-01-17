@@ -1,4 +1,4 @@
-package com.cms.zl.controller.home;
+package com.cms.zl.controller;
 
 import com.cms.zl.Exception.ControllerParamException;
 import com.cms.zl.entity.User;
