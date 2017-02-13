@@ -94,254 +94,43 @@
                                         </thead>
 
                                         <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
+                                            <#list articles as article>
+                                                <tr>
+                                                    <td class="center">
+                                                        <label>
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"></span>
+                                                        </label>
+                                                    </td>
 
-                                                <td>HDFS的读写流程</td>
+                                                    <td>${article.title}</td>
 
-                                                <td>
-                                                    <b class="green">Hadoop</b>
-                                                </td>
+                                                    <td>
+                                                        <small>
+                                                            <s class="red"></s>
+                                                        </small>
+                                                        <b class="green">${article.kind}</b>
+                                                    </td>
 
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
+                                                    <td>
+                                                        <span class="label label-info arrowed-right arrowed-in">${article.updateTime}</span>
+                                                    </td>
 
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
+                                                    <td>
+                                                        <button class="btn btn-xs btn-primary">
+                                                            <i class="icon-pencil align-top smaller"></i>
+                                                            编辑
+                                                        </button>
+                                                    </td>
 
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
-
-                                                <td>HashTable</td>
-
-                                                <td>
-                                                    <small>
-                                                        <s class="red"></s>
-                                                    </small>
-                                                    <b class="green">JAVA</b>
-                                                </td>
-
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
-
-                                                <td>HashTable</td>
-
-                                                <td>
-                                                    <small>
-                                                        <s class="red"></s>
-                                                    </small>
-                                                    <b class="green">JAVA</b>
-                                                </td>
-
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
-
-                                                <td>HashTable</td>
-
-                                                <td>
-                                                    <small>
-                                                        <s class="red"></s>
-                                                    </small>
-                                                    <b class="green">JAVA</b>
-                                                </td>
-
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
-
-                                                <td>HashTable</td>
-
-                                                <td>
-                                                    <small>
-                                                        <s class="red"></s>
-                                                    </small>
-                                                    <b class="green">JAVA</b>
-                                                </td>
-
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
-
-                                                <td>HashTable</td>
-
-                                                <td>
-                                                    <small>
-                                                        <s class="red"></s>
-                                                    </small>
-                                                    <b class="green">JAVA</b>
-                                                </td>
-
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </td>
-
-                                                <td>HashTable</td>
-
-                                                <td>
-                                                    <small>
-                                                        <s class="red"></s>
-                                                    </small>
-                                                    <b class="green">JAVA</b>
-                                                </td>
-
-                                                <td>
-                                                    <span class="label label-info arrowed-right arrowed-in">2016-12-31</span>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary">
-                                                        <i class="icon-pencil align-top smaller"></i>
-                                                        编辑
-                                                    </button>
-                                                </td>
-
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="icon-trash align-top smaller"></i>
-                                                        删除
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                                    <td>
+                                                        <button class="btn btn-xs btn-danger">
+                                                            <i class="icon-trash align-top smaller"></i>
+                                                            删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </#list>
                                         </tbody>
                                     </table>
                                 </div><!-- /widget-main -->
@@ -353,26 +142,59 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="pagination pull-left">
-                            <li class="prev disabled">
-                                <a href="#">
+                            <li class="prev">
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=1">
                                     <i class="icon-double-angle-left"></i>
                                 </a>
                             </li>
 
-                            <li class="active">
-                                <a href="#">1</a>
+                        <#if currentPage = 1>
+                            <li class="prev disabled">
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${currentPage-1}">
+                                    <i class="icon-angle-left"></i>
+                                </a>
+                            </li>
+                        <#else>
+                            <li class="prev">
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${currentPage-1}">
+                                    <i class="icon-angle-left"></i>
+                                </a>
+                            </li>
+                        </#if>
+
+                        <#if currentPage gt 1>
+                            <li>
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${currentPage-1}">${currentPage-1}</a>
+                            </li>
+                        </#if>
+
+
+                            <li  class="active">
+                                <a href="#">${currentPage}</a>
                             </li>
 
+                        <#if currentPage lt maxPage>
                             <li>
-                                <a href="#">2</a>
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${currentPage+1}">${currentPage+1}</a>
                             </li>
+                        </#if>
 
-                            <li>
-                                <a href="#">3</a>
+                        <#if currentPage+1 gt maxPage>
+                            <li class="next disabled">
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${currentPage+1}">
+                                    <i class="icon-angle-right"></i>
+                                </a>
                             </li>
+                        <#else>
+                            <li class="next">
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${currentPage+1}">
+                                    <i class="icon-angle-right"></i>
+                                </a>
+                            </li>
+                        </#if>
 
                             <li class="next">
-                                <a href="#">
+                                <a href="http://127.0.0.1:8088/admin/article/list?page=${maxPage}">
                                     <i class="icon-double-angle-right"></i>
                                 </a>
                             </li>

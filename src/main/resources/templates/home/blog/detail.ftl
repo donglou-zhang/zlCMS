@@ -125,15 +125,25 @@
                                 发评论
                             </div>
                             <div class="make_comments">
-                                <form action="" method="POST" accept-charset="utf-8">
-                                    <input type="hidden" name="user.uid" value="sessionScope.user.uid" />
-                                    <input type="hidden" name="article.aid" value="requestScope.currentArticle.aid" />
+                                <form action="/admin/comment" method="POST" accept-charset="utf-8">
+                                    <input type="hidden" name="user_id" value="${user_id}" />
+                                    <input type="hidden" name="article_id" value="${article.id}" />
                                     <div class="form-group">
-                                        <label class="warn_submit_comment" for="comment_content">还没登陆，请登陆后评论!</label>
+                                        <#if username??>
+                                            <textarea type="text" class="form-control" name="comment" id="comment">${username}:</textarea>
+                                        <#else>
+                                            <label class="warn_submit_comment" for="comment_content">还没登陆，请登陆后评论!</label>
+                                            <textarea type="text" class="form-control" name="comment_content" id="comment_content"></textarea>
+                                        </#if>
                                         <#--<label class="submit_comment" for="comment_content">${sessionScope.user.username }:</label>-->
-                                        <textarea type="text" class="form-control" name="comment_content" id="comment_content"></textarea>
+
                                     </div>
-                                    <button type="submit" class="btn btn-default" onclick="">提交</button>
+                                    <#if username??>
+                                        <button type="submit" class="btn btn-default">提交</button>
+                                    <#else>
+                                        <button type="submit" class="btn btn-default" disabled="disabled">提交</button>
+                                    </#if>
+
                                 </form>
                             </div>
                         </div>

@@ -6,11 +6,13 @@ import com.cms.zl.model.ArticleForm;
 import com.cms.zl.service.IArticleService;
 import com.cms.zl.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -23,6 +25,7 @@ import java.security.Principal;
 @Controller
 @RequestMapping("/admin/article")
 public class ArticleController {
+    private static final int articlePageSize = 5;
 
     private final IUserService userService;
     private final IArticleService articleService;
@@ -34,8 +37,15 @@ public class ArticleController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView articleList() {
+    public ModelAndView articleList(@RequestParam(value = "page", defaultValue = "1")Integer page) {
         ModelAndView mav = new ModelAndView("admin/articleList");
+        Page<Article> articlePage = articleService.get(page-1, articlePageSize);
+        mav.addObject("articles", articlePage.getContent());
+
+        int pageNumber = articlePage.getTotalPages();
+
+        mav.addObject("currentPage", page.intValue());
+        mav.addObject("maxPage", pageNumber);
         return mav;
     }
 
