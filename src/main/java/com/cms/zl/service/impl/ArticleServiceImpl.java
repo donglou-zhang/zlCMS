@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Vincent on 2017/1/1.
@@ -52,22 +53,46 @@ public class ArticleServiceImpl implements IArticleService{
 
     @Override
     public Article getPreArticle(Timestamp updateTime) {
-        return articleRepository.findByUpdateTimeGreaterThanOrderByUpdateTimeAsc(updateTime).get(0);
+        List<Article> resultArticles = articleRepository.findByUpdateTimeGreaterThanOrderByUpdateTimeAsc(updateTime);
+        if(resultArticles.size() > 0) {
+            return resultArticles.get(0);
+        }
+        else {
+            return null;
+        }
     }
 
     @Override
     public Article getNextArticle(Timestamp updateTime) {
-        return articleRepository.findByUpdateTimeLessThanOrderByUpdateTimeDesc(updateTime).get(0);
+        List<Article> resultArticles = articleRepository.findByUpdateTimeLessThanOrderByUpdateTimeDesc(updateTime);
+        if(resultArticles.size() > 0) {
+            return resultArticles.get(0);
+        }
+        else {
+            return null;
+        }
     }
 
     @Override
     public Article getPreArticleByKind(String kind, Timestamp updateTime) {
-        return articleRepository.findByKindAndUpdateTimeGreaterThanOrderByUpdateTimeAsc(kind, updateTime).get(0);
+        List<Article> resultArticles = articleRepository.findByKindAndUpdateTimeGreaterThanOrderByUpdateTimeAsc(kind, updateTime);
+        if(resultArticles.size() > 0) {
+            return resultArticles.get(0);
+        }
+        else {
+            return null;
+        }
     }
 
     @Override
     public Article getNextArticleByKind(String kind, Timestamp updateTime) {
-        return articleRepository.findByKindAndUpdateTimeLessThanOrderByUpdateTimeDesc(kind, updateTime).get(0);
+        List<Article> resultArticles = articleRepository.findByKindAndUpdateTimeLessThanOrderByUpdateTimeDesc(kind, updateTime);
+        if(resultArticles.size() > 0) {
+            return resultArticles.get(0);
+        }
+        else {
+            return null;
+        }
     }
 
     @Override

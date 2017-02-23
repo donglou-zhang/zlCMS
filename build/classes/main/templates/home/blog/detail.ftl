@@ -39,8 +39,13 @@
                         </div>
                         <div class="article_link">
                             <ul>
-                                <li>前一篇：<a href="http://127.0.0.1:8088/article?id=${preArticle.id}&kind=${kind}">Pre</a></li>
-                                <li>后一篇：<a href="http://127.0.0.1:8088/article?id=${nextArticle.id}&kind=${kind}">Next</a></li>
+                                <#if preArticle??>
+                                    <li>前一篇：<a href="http://127.0.0.1:8088/article?id=${preArticle.id}&kind=${kind}">${preArticle.title}</a></li>
+                                </#if>
+
+                                <#if nextArticle??>
+                                    <li>后一篇：<a href="http://127.0.0.1:8088/article?id=${nextArticle.id}&kind=${kind}">${nextArticle.title}</a></li>
+                                </#if>
                             </ul>
                         </div>
                         <div class="article_comment">

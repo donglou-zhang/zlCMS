@@ -14,6 +14,9 @@
                     <li class="active">
                         <a href="/blog/index">首页</a>
                     </li>
+                    <script type="text/javascript">
+                        var current_kind = "index";
+                    </script>
                 <#else>
                     <li>
                         <a href="/blog/index">首页</a>
@@ -23,6 +26,9 @@
                     <li class="active">
                         <a href="/blog/coding">编程</a>
                     </li>
+                    <script type="text/javascript">
+                        var current_kind = "coding";
+                    </script>
                 <#else>
                     <li>
                         <a href="/blog/coding">编程</a>
@@ -32,6 +38,9 @@
                     <li class="active">
                         <a href="/blog/reading">读书</a>
                     </li>
+                    <script type="text/javascript">
+                        var current_kind = "reading";
+                    </script>
                 <#else>
                     <li>
                         <a href="/blog/reading">读书</a>
@@ -41,6 +50,9 @@
                     <li class="active">
                         <a href="/blog/recording">随笔</a>
                     </li>
+                    <script type="text/javascript">
+                        var current_kind = "recording";
+                    </script>
                 <#else>
                     <li>
                         <a href="/blog/recording">随笔</a>

@@ -13,7 +13,7 @@
 	<div class="container page">
 		<div class="row">
 			<!-- 包括introduce区以及导航区 -->
-			<div class="col-sm-12 col-md-12 header">
+			<div class="header col-sm-12 col-md-12">
 				<#include "assembly/header.ftl" >
 				<#include "assembly/navbar.ftl" >
 			</div>
@@ -56,25 +56,50 @@
 							</div>
 						</div>
 					</div>
-					<div class="content col-sm-9 col-md-9 remove_padding" id="brief_intro">
-						<#list articles as article>
-                            <div class="brief_article">
-                                <div class="content_label">
-                                    <span class="article_title">${article.title}</span>
-                                    <span class="article_time"><small>&nbsp;&nbsp;(${article.updateTime})</small></span>
-                                </div>
-                                <div class="content_introduction">
-									${article.summary}
-                                </div>
-                                <div class="content_skip">
-                                    <a href="/article?id=${article.id}&kind=${kind}" target="_blank">查看全文>></a>
-                                </div>
-                            </div>
-						</#list>
+					<div class="col-sm-9 col-md-9">
+						<div class="row">
+							<div class="content remove_padding col-sm-12 col-md-12" id="brief_intro">
+								<#list articles as article>
+									<div class="brief_article">
+										<div class="content_label">
+											<span class="article_title">${article.title}</span>
+											<span class="article_time"><small>&nbsp;&nbsp;(${article.updateTime})</small></span>
+										</div>
+										<div class="content_introduction">
+										${article.summary}
+										</div>
+										<div class="content_skip">
+											<a href="/article?id=${article.id}&kind=${kind}" target="_blank">查看全文>></a>
+										</div>
+									</div>
+								</#list>
+							</div>
+						</div>
+						<div class="row">
+							<div class="remove_padding col-sm-12 col-md-12">
+                                <button id="loadMore" onclick="load_more()" class="more_article" style="width: 92%; margin-left: 4%;">加载更多</button>
+							</div>
+						</div>
 					</div>
-                    <div class="col-sm-9 col-md-9 col-sm-offset-3 col-md-offset-3 remove_padding">
-                        <button id="loadMore" onclick="load_more()" class="more_article" style="width: 92%; margin-left: 4%;">加载更多</button>
-                    </div>
+					<#--<div class="content col-sm-9 col-md-9 remove_padding" id="brief_intro">-->
+						<#--<#list articles as article>-->
+                            <#--<div class="brief_article">-->
+                                <#--<div class="content_label">-->
+                                    <#--<span class="article_title">${article.title}</span>-->
+                                    <#--<span class="article_time"><small>&nbsp;&nbsp;(${article.updateTime})</small></span>-->
+                                <#--</div>-->
+                                <#--<div class="content_introduction">-->
+									<#--${article.summary}-->
+                                <#--</div>-->
+                                <#--<div class="content_skip">-->
+                                    <#--<a href="/article?id=${article.id}&kind=${kind}" target="_blank">查看全文>></a>-->
+                                <#--</div>-->
+                            <#--</div>-->
+						<#--</#list>-->
+					<#--</div>-->
+                    <#--<div class="col-sm-9 col-md-9 col-sm-offset-3 col-md-offset-3 remove_padding">-->
+                        <#--<button id="loadMore" onclick="load_more()" class="more_article" style="width: 92%; margin-left: 4%;">加载更多</button>-->
+                    <#--</div>-->
 				</div>
 			</div>
 		</div>
@@ -112,7 +137,7 @@
                         data.forEach(function(value, index, array){
                             var info = "<div class='brief_article'><div class='content_label'><span class='article_title'>" + array[index]['title'] + "</span>" +
                                     "<span class='article_time'><small>&nbsp;&nbsp;(" + array[index]['updateTime'] + ")</small></span></div><div class='content_introduction'>" +
-                                    array[index]['summary'] + "</div><div class='content_skip'><a href='/article?id=" + array[index]['id'] + "&kind=" + current_kind + " target='_blank'>查看全文>></a></div></div>"
+                                    array[index]['summary'] + "</div><div class='content_skip'><a href='/article?id=" + array[index]['id'] + "&kind=" + current_kind + "' target='_blank'>查看全文>></a></div></div>";
                             append_info += info;
                         });
                         $("#brief_intro").append(append_info);
