@@ -13,7 +13,6 @@
     <link href="/css/admin/ace/font-awesome-ie7.min.css" rel="stylesheet" />
     <![endif]-->
     <script src="/js/admin/ace/ace-extra.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -77,26 +76,14 @@
                                             <i class="icon-leaf blue"></i>
                                     </span>
                                     </#list>
-                                    <#--<span class="input-icon">-->
-                                        <#--<input type="text" id="labe0" />-->
-                                        <#--<i class="icon-leaf blue"></i>-->
-                                    <#--</span>-->
-
-                                    <#--<span class="input-icon">-->
-                                        <#--<input type="text" id="label1" />-->
-                                        <#--<i class="icon-leaf green"></i>-->
-                                    <#--</span>-->
-
-                                    <#--<span class="input-icon">-->
-                                        <#--<input type="text" id="label2" />-->
-                                        <#--<i class="icon-leaf red"></i>-->
-                                    <#--</span>-->
-
-                                    <#--<span class="input-icon">-->
-                                        <#--<input type="text" id="label3" />-->
-                                        <#--<i class="icon-leaf pink"></i>-->
-                                    <#--</span>-->
                                     <input type="hidden" id="label" name="label"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-coding-tags">编程</label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" name="tags" id="form-coding-tags" value="coding" placeholder="..." />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -126,12 +113,13 @@
 </script>
 
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/js/admin/ace/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/js/admin/ace/typeahead-bs2.min.js"></script>
+
 <script src="/js/admin/ace/ace-elements.min.js"></script>
+<script src="/js/admin/ace/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="/js/admin/ace/ace.min.js"></script>
+<script src="/js/admin/ace/bootstrap-tag.min.js"></script>
 <script type="text/javascript">
-
-
     jQuery(function($) {
         $('#avatar').ace_file_input({
             no_file:'No Image ...',
@@ -146,7 +134,24 @@
         $("#profileForm").submit(function () {
             var labels = $("#label0").val() + "&" + $("#label1").val() + "&" + $("#label2").val() + "&" + $("#label3").val()
             $("#label").val(labels);
-        })
+        });
+
+        var tag_input = $('#form-coding-tags');
+        if(! ( /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase())) )
+        {
+            tag_input.tag(
+                    {
+                        placeholder:tag_input.attr('placeholder'),
+                        //enable typeahead by specifying the source array
+                        source: ace.variable_US_STATES,//defined in ace.js >> ace.enable_search_ahead
+                    }
+            );
+        }
+        else {
+            //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+            tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+            //$('#form-field-tags').autosize({append: "\n"});
+        }
     });
 </script>
 </body><!-- area 1 -->

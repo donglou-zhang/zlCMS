@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.sql.Timestamp;
 
 /**
  * Created by Vincent on 2017/1/1.
@@ -25,8 +26,8 @@ public class ArticleServiceImpl implements IArticleService{
     }
 
     @Override
-    public Article create(String title, String kind, String content) {
-        return articleRepository.save(new Article(title, kind, content));
+    public Article create(String title, String topic, String kind, String content) {
+        return articleRepository.save(new Article(title, topic, kind, content));
     }
 
     @Override
@@ -42,6 +43,31 @@ public class ArticleServiceImpl implements IArticleService{
     @Override
     public Article get(String id) {
         return articleRepository.findOne(id);
+    }
+
+    @Override
+    public Article getByIdAndKind(String id, String kind) {
+        return articleRepository.findByIdAndKind(id, kind);
+    }
+
+    @Override
+    public Article getPreArticle(Timestamp updateTime) {
+        return articleRepository.findByUpdateTimeGreaterThanOrderByUpdateTimeAsc(updateTime).get(0);
+    }
+
+    @Override
+    public Article getNextArticle(Timestamp updateTime) {
+        return articleRepository.findByUpdateTimeLessThanOrderByUpdateTimeDesc(updateTime).get(0);
+    }
+
+    @Override
+    public Article getPreArticleByKind(String kind, Timestamp updateTime) {
+        return articleRepository.findByKindAndUpdateTimeGreaterThanOrderByUpdateTimeAsc(kind, updateTime).get(0);
+    }
+
+    @Override
+    public Article getNextArticleByKind(String kind, Timestamp updateTime) {
+        return articleRepository.findByKindAndUpdateTimeLessThanOrderByUpdateTimeDesc(kind, updateTime).get(0);
     }
 
     @Override

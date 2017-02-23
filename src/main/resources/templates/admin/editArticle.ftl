@@ -49,9 +49,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-1 control-label no-padding-right" for="kind">专题</label>
+                                        <label class="col-sm-1 control-label no-padding-right" for="topic">专题</label>
                                         <div class="col-sm-11">
-                                            <input type="text" id="kind" name="kind" placeholder="文章专题" class="col-xs-6 col-sm-3" />
+                                            <input type="text" id="topic" name="topic" placeholder="文章专题" class="col-xs-6 col-sm-3" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-1 control-label no-padding-right" for="kind">分类</label>
+                                        <div class="col-xs-6 col-sm-3">
+                                            <select class="form-control" id="kind" name="kind">
+                                                <option value="">&nbsp;</option>
+                                                <option value="coding">编程</option>
+                                                <option value="reading">读书</option>
+                                                <option value="recording">随笔</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">

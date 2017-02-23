@@ -20,6 +20,9 @@ public class Article extends ParentEntity{
     @Column
     private String kind;
 
+    @Column
+    private String topic;
+
     @Lob
     @Column(nullable = false)
     private String content;
@@ -41,10 +44,12 @@ public class Article extends ParentEntity{
         comments = new HashSet<>();
     }
 
-    public Article(String title, String kind, String content) {
+    public Article(String title, String topic, String kind, String content) {
         this.title = title;
         this.kind = kind;
+        this.topic = topic;
         this.content = content;
+
     }
 
     public String getTitle() {
@@ -77,6 +82,14 @@ public class Article extends ParentEntity{
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     @PreUpdate

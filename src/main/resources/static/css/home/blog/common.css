@@ -224,9 +224,24 @@ body{
 	position: relative;
 	border: 1px solid black;
 	background-color: #2D2929;
-	-moz-border-radius: 15px;      /* Gecko browsers */
-    -webkit-border-radius: 15px;   /* Webkit browsers */
-    border-radius:15px;            /* W3C syntax */
+	-moz-border-radius: 10px;      /* Gecko browsers */
+    -webkit-border-radius: 10px;   /* Webkit browsers */
+    border-radius:10px;            /* W3C syntax */
+}
+
+.more_article{
+	min-height: 40px;
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+	border: 1px solid black;
+	background-color: #2D2929;
+	-moz-border-radius: 10px;      /* Gecko browsers */
+	-webkit-border-radius: 10px;   /* Webkit browsers */
+	border-radius:10px;            /* W3C syntax */
 }
 
 .content_label{

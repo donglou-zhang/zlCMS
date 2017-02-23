@@ -7,23 +7,25 @@ import com.cms.zl.repository.ICommentRepository;
 import com.cms.zl.repository.IUserRepository;
 import com.cms.zl.service.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * Created by lei_b on 2017/1/28.
  */
 @Service
 @Transactional
-public class CommentService implements ICommentService {
+public class CommentServiceImpl implements ICommentService {
     private final ICommentRepository commentRepository;
     private final IArticleRepository articleRepository;
     private final IUserRepository userRepository;
 
 
     @Autowired
-    public CommentService(ICommentRepository commentRepository, IArticleRepository articleRepository, IUserRepository userRepository) {
+    public CommentServiceImpl(ICommentRepository commentRepository, IArticleRepository articleRepository, IUserRepository userRepository) {
         this.commentRepository = commentRepository;
         this.articleRepository = articleRepository;
         this.userRepository = userRepository;
@@ -41,5 +43,10 @@ public class CommentService implements ICommentService {
     @Override
     public Comment get(String id) {
         return null;
+    }
+
+    @Override
+    public List<Comment> getByArticle(String articleId) {
+        return commentRepository.findByArticle_Id(articleId, new Sort(Sort.Direction.ASC, "createTime"));
     }
 }

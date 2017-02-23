@@ -73,6 +73,11 @@
 
                                                 <th>
                                                     <i class="icon-caret-right blue"></i>
+                                                    分类
+                                                </th>
+
+                                                <th>
+                                                    <i class="icon-caret-right blue"></i>
                                                     专题
                                                 </th>
 
@@ -109,7 +114,19 @@
                                                         <small>
                                                             <s class="red"></s>
                                                         </small>
-                                                        <b class="green">${article.kind}</b>
+                                                        <b class="pink">${article.kind}</b>
+                                                    </td>
+
+                                                    <td>
+                                                        <small>
+                                                            <s class="red"></s>
+                                                        </small>
+                                                        <#if article.topic?exists>
+                                                            <b class="green">${article.topic}</b>
+                                                        <#else>
+                                                            <b class="green"></b>
+                                                        </#if>
+
                                                     </td>
 
                                                     <td>
