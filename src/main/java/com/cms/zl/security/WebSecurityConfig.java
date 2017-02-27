@@ -38,7 +38,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     }
 
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-//        httpSecurity.authorizeRequests()
+        httpSecurity.authorizeRequests()
+                .anyRequest().permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .and().formLogin().loginPage("/signin").defaultSuccessUrl("/blog/index")
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/blog/index")
+                .and().rememberMe().rememberMeParameter("remember-me").tokenValiditySeconds(3153600)
+                .and().csrf().disable();
 //                .anyRequest().authenticated()
 //                .antMatchers("/signup", "/signin").permitAll() //允许任何人访问"signup"和"signin"
 //                .antMatchers("/admin/**").hasRole("ADMIN")  //访问以"admin"开头的地址，必须具有ROLE_ADMIN身份
@@ -46,12 +52,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 //                .and().logout().permitAll()
 //                .and().rememberMe().rememberMeParameter("remember-me")
 //                .and().csrf().disable();
-        httpSecurity.authorizeRequests().anyRequest().permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .and().formLogin().loginPage("/signin").defaultSuccessUrl("/blog/index")
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/blog/index")
-                .and().rememberMe().rememberMeParameter("remember-me")
-                .and().csrf().disable();
     }
 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

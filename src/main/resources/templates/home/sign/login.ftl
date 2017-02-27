@@ -62,7 +62,7 @@
                             </div>
                             <div class="checkbox remember-me">
                                 <label for="remember-me">
-                                <input type="checkbox" name="remember-me" id="remember-me">记住我
+                                    <input type="checkbox" name="remember-me" id="remember-me">记住我
                                 </label>
                             </div>
                             <#if Session.SPRING_SECURITY_LAST_EXCEPTION??>
