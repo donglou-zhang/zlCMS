@@ -58,96 +58,96 @@
                                 <div class="widget-main no-padding">
                                     <table class="table table-bordered table-striped">
                                         <thead class="thin-border-bottom">
-                                            <tr>
-                                                <th class="center">
-                                                    <label>
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </th>
+                                        <tr>
+                                            <th class="center">
+                                                <label>
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </th>
 
-                                                <th>
-                                                    <i class="icon-caret-right blue"></i>
-                                                    名称
-                                                </th>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                名称
+                                            </th>
 
-                                                <th>
-                                                    <i class="icon-caret-right blue"></i>
-                                                    分类
-                                                </th>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                分类
+                                            </th>
 
-                                                <th>
-                                                    <i class="icon-caret-right blue"></i>
-                                                    专题
-                                                </th>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                专题
+                                            </th>
 
-                                                <th>
-                                                    <i class="icon-caret-right blue"></i>
-                                                    创建时间
-                                                </th>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                创建时间
+                                            </th>
 
-                                                <th>
-                                                    <i class="icon-caret-right blue"></i>
-                                                    编辑
-                                                </th>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                编辑
+                                            </th>
 
-                                                <th>
-                                                    <i class="icon-caret-right blue"></i>
-                                                    删除
-                                                </th>
-                                             </tr>
+                                            <th>
+                                                <i class="icon-caret-right blue"></i>
+                                                删除
+                                            </th>
+                                        </tr>
                                         </thead>
 
                                         <tbody>
-                                            <#list articles as article>
-                                                <tr>
-                                                    <td class="center">
-                                                        <label>
-                                                            <input type="checkbox" class="ace" />
-                                                            <span class="lbl"></span>
-                                                        </label>
-                                                    </td>
+                                        <#list articles as article>
+                                        <tr>
+                                            <td class="center">
+                                                <label>
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </td>
 
-                                                    <td>${article.title}</td>
+                                            <td>${article.title}</td>
 
-                                                    <td>
-                                                        <small>
-                                                            <s class="red"></s>
-                                                        </small>
-                                                        <b class="pink">${article.kind}</b>
-                                                    </td>
+                                            <td>
+                                                <small>
+                                                    <s class="red"></s>
+                                                </small>
+                                                <b class="pink">${article.kind}</b>
+                                            </td>
 
-                                                    <td>
-                                                        <small>
-                                                            <s class="red"></s>
-                                                        </small>
-                                                        <#if article.topic?exists>
-                                                            <b class="green">${article.topic}</b>
-                                                        <#else>
-                                                            <b class="green"></b>
-                                                        </#if>
+                                            <td>
+                                                <small>
+                                                    <s class="red"></s>
+                                                </small>
+                                                <#if article.topic?exists>
+                                                    <b class="green">${article.topic}</b>
+                                                <#else>
+                                                    <b class="green"></b>
+                                                </#if>
 
-                                                    </td>
+                                            </td>
 
-                                                    <td>
-                                                        <span class="label label-info arrowed-right arrowed-in">${article.updateTime}</span>
-                                                    </td>
+                                            <td>
+                                                <span class="label label-info arrowed-right arrowed-in">${article.updateTime}</span>
+                                            </td>
 
-                                                    <td>
-                                                        <button class="btn btn-xs btn-primary">
-                                                            <i class="icon-pencil align-top smaller"></i>
-                                                            编辑
-                                                        </button>
-                                                    </td>
+                                            <td>
+                                                <button class="btn btn-xs btn-primary" onclick="window.open('/admin/article/edit?id=${article.id}')">
+                                                    <i class="icon-pencil align-top smaller"></i>
+                                                    编辑
+                                                </button>
+                                            </td>
 
-                                                    <td>
-                                                        <button class="btn btn-xs btn-danger">
-                                                            <i class="icon-trash align-top smaller"></i>
-                                                            删除
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </#list>
+                                            <td>
+                                                <button class="btn btn-xs btn-danger" name="${article.id}">
+                                                    <i class="icon-trash align-top smaller"></i>
+                                                    删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </#list>
                                         </tbody>
                                     </table>
                                 </div><!-- /widget-main -->
@@ -247,14 +247,14 @@
             var aid=$(this).attr("name");//点击获取当前button的id值
             warn('warn!','确认删除!','f',true,'确认',function(){
                 $.ajax({
-                    url:"",
+                    url:"http://127.0.0.1:8088/admin/article/delete",
                     type:'POST',
                     dataType:'json',
                     data:{
-
+                        id:aid,
                     },
                     success: function(data){
-
+                        location.reload();
                     }
                 });
             });

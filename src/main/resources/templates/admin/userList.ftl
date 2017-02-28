@@ -9,6 +9,7 @@
     <link href="/css/admin/ace/font-awesome.min.css" rel="stylesheet">
     <link href="/css/admin/ace/ace.min.css" rel="stylesheet">
     <link href="/css/admin/ace/ace-skins.min.css" rel="stylesheet">
+    <link href="/css/admin/warning.css" rel="stylesheet">
     <!--[if IE 7]>
     <link href="/css/admin/ace/font-awesome-ie7.min.css" rel="stylesheet" />
     <![endif]-->
@@ -125,7 +126,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <button class="btn btn-xs btn-danger">
+                                                    <button class="btn btn-xs btn-danger" name="${user.id}">
                                                         <i class="icon-trash align-top smaller"></i>
                                                         删除
                                                     </button>
@@ -224,6 +225,7 @@
 <script src="/js/admin/ace/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="/js/admin/ace/ace-elements.min.js"></script>
 <script src="/js/admin/ace/ace.min.js"></script>
+<script src="/js/admin/warning.js"></script>
 <script type="text/javascript">
     $(".disabled").click(function (event) {
         event.preventDefault();
@@ -235,7 +237,23 @@
     }
 
     jQuery(function($) {
+        $(".btn-danger").click(function(){
+            var uid=$(this).attr("name");//点击获取当前button的id值
+            warn('warn!','确认删除!','f',true,'确认',function(){
+                $.ajax({
+                    url:"http://127.0.0.1:8088/admin/user/delete",
+                    type:'POST',
+                    dataType:'json',
+                    data:{
+                        id:uid,
+                    },
+                    success: function(data){
+                        location.reload();
+                    }
+                });
+            });
 
+        });
     })
 </script>
 </body><!-- area 1 -->

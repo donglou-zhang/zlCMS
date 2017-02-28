@@ -45,13 +45,21 @@
                                     <div class="form-group">
                                         <label class="col-sm-1 control-label no-padding-right" for="title">标题</label>
                                         <div class="col-sm-11">
-                                            <input type="text" id="title" name="title" placeholder="文章标题" class="col-xs-6 col-sm-3" />
+                                            <#if article?? && article.title??>
+                                                <input type="text" id="title" name="title" placeholder="文章标题" class="col-xs-6 col-sm-3" value="${article.title}"/>
+                                            <#else>
+                                                <input type="text" id="title" name="title" placeholder="文章标题" class="col-xs-6 col-sm-3" />
+                                            </#if>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-1 control-label no-padding-right" for="topic">专题</label>
                                         <div class="col-sm-11">
+                                        <#if article?? && article.topic??>
+                                            <input type="text" id="topic" name="topic" placeholder="文章专题" class="col-xs-6 col-sm-3" value="${article.topic}"/>
+                                        <#else>
                                             <input type="text" id="topic" name="topic" placeholder="文章专题" class="col-xs-6 col-sm-3" />
+                                        </#if>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -59,16 +67,32 @@
                                         <div class="col-xs-6 col-sm-3">
                                             <select class="form-control" id="kind" name="kind">
                                                 <option value="">&nbsp;</option>
-                                                <option value="coding">编程</option>
-                                                <option value="reading">读书</option>
-                                                <option value="recording">随笔</option>
+                                                <#if article?? && article.kind=="coding">
+                                                    <option value="coding" selected="selected">编程</option>
+                                                <#else>
+                                                    <option value="coding">编程</option>
+                                                </#if>
+                                                <#if article?? && article.kind=="reading">
+                                                    <option value="reading" selected="selected">读书</option>
+                                                <#else>
+                                                    <option value="reading">读书</option>
+                                                </#if>
+                                                <#if article?? && article.kind=="recording">
+                                                    <option value="recording" selected="selected">随笔</option>
+                                                <#else>
+                                                    <option value="recording">随笔</option>
+                                                </#if>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-1 control-label no-padding-right" for="content">内容</label>
                                         <div class="col-sm-11">
-                                            <textarea class="form-control" id="content" name="content" style="height: 350px;"></textarea>
+                                            <#if article?? && article.content??>
+                                                <textarea class="form-control" id="content" name="content" style="height: 350px;">${article.content}</textarea>
+                                            <#else>
+                                                <textarea class="form-control" id="content" name="content" style="height: 350px;"></textarea>
+                                            </#if>
                                         </div>
                                     </div>
                                     <div class="form-group">

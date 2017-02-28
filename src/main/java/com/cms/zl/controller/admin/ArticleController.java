@@ -13,10 +13,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Vincent on 2016/12/30.
@@ -50,9 +53,22 @@ public class ArticleController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public ModelAndView addArticle() {
+    public ModelAndView addArticle(@RequestParam(value = "id", required = false)String id) {
         ModelAndView mav = new ModelAndView("admin/editArticle");
+        if(id != null && id.length() != 0) {
+            Article article = articleService.get(id);
+            mav.addObject("article", article);
+        }
         return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public Map deleteArticle(@RequestParam(value = "id")String id) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put("status", "success");
+        articleService.delete(id);
+        return resultMap;
     }
 
     @RequestMapping(method = RequestMethod.POST)

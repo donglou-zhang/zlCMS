@@ -13,7 +13,7 @@
 	<div class="container page">
 		<div class="row">
 			<!-- 包括introduce区以及导航区 -->
-			<div class="header col-sm-12 col-md-12">
+			<div class="header nh] col-sm-12 col-md-12">
 				<#include "assembly/header.ftl" >
 				<#include "assembly/navbar.ftl" >
 			</div>
@@ -33,7 +33,7 @@
 								</#if>
 
 								<#if profile.education??>
-                                    <div>教育： ${profile.education}</div>
+                                     <div>教育： ${profile.education}</div>
 								</#if>
 
 								<#if profile.email??>

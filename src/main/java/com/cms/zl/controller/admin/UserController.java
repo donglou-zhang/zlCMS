@@ -15,7 +15,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Vincent on 2016/12/30.
@@ -59,5 +63,13 @@ public class UserController {
     public ModelAndView editUser(@RequestParam(value = "id")String id) {
         ModelAndView mav = new ModelAndView("admin/userEdit");
         return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public List<String> deleteUser(@RequestParam(value = "id")String id) {
+        List<String> resultList = new ArrayList<>();
+        userService.delete(id);
+        return resultList;
     }
 }
