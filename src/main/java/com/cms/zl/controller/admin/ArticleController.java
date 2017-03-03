@@ -10,10 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -53,12 +50,25 @@ public class ArticleController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public ModelAndView addArticle(@RequestParam(value = "id", required = false)String id) {
+    public ModelAndView editArticle(@RequestParam(value = "id", required = false)String id) {
         ModelAndView mav = new ModelAndView("admin/editArticle");
         if(id != null && id.length() != 0) {
             Article article = articleService.get(id);
             mav.addObject("article", article);
         }
+        return mav;
+    }
+
+    @RequestMapping(value = "/saveEdit", method = RequestMethod.POST)
+    public ModelAndView saveEdit(@RequestParam(value = "id")String id, @Valid ArticleForm articleForm, BindingResult bindingResult) throws ControllerParamException{
+        if(bindingResult.hasErrors()) throw new ControllerParamException("编辑文章参数错误");
+        ModelAndView mav = new ModelAndView("redirect:/admin/article/list");
+        Article article = articleService.get(id);
+        article.setTitle(articleForm.getTitle());
+        article.setKind(articleForm.getKind());
+        article.setTopic(articleForm.getTopic());
+        article.setContent(articleForm.getContent());
+        articleService.update(article);
         return mav;
     }
 
@@ -71,10 +81,18 @@ public class ArticleController {
         return resultMap;
     }
 
+    /**
+     * 添加新文章
+     * @param articleForm
+     * @param result
+     * @param principal
+     * @return
+     * @throws ControllerParamException
+     */
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView addArticle(@Valid ArticleForm articleForm, BindingResult result, Principal principal) throws ControllerParamException {
         if(result.hasErrors()) throw new ControllerParamException("编辑文章参数错误");
-        Article article = articleService.create(articleForm.getTitle(), articleForm.getTopic(), articleForm.getKind(), articleForm.getContent());
+        articleService.create(articleForm.getTitle(), articleForm.getTopic(), articleForm.getKind(), articleForm.getContent());
         ModelAndView mav = new ModelAndView("redirect:/admin/article/list");
         return mav;
     }

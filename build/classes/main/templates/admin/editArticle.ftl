@@ -2,7 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>添加文章</title>
+        <#if article??>
+            <title>编辑文章</title>
+        <#else>
+            <title>添加文章</title>
+        </#if>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +46,11 @@
                     <div class="page-content">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <form class="form-horizontal" role="form" id="articleForm" action="/admin/article" method="post">
+                                <#if article??>
+                                    <form class="form-horizontal" role="form" id="articleForm" action="/admin/article/saveEdit?id=${article.id}" method="post">
+                                <#else>
+                                    <form class="form-horizontal" role="form" id="articleForm" action="/admin/article" method="post">
+                                </#if>
                                     <div class="form-group">
                                         <label class="col-sm-1 control-label no-padding-right" for="title">标题</label>
                                         <div class="col-sm-11">
@@ -97,7 +106,12 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-1 col-sm-11">
-                                            <input class="btn btn-info " type="submit" value="发布">
+                                            <#if article??>
+                                                <#--<input type="hidden" name="id" value="${article.id}">-->
+                                                <input class="btn btn-info " type="submit" value="保存">
+                                            <#else>
+                                                <input class="btn btn-info " type="submit" value="发布">
+                                            </#if>
                                             </input>
                                         </div>
                                     </div>
