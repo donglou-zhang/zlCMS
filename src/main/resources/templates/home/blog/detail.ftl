@@ -8,7 +8,12 @@
     <link href="/css/home/blog/ihover.css" rel="stylesheet">
     <link href="/css/home/blog/docs.min.css" rel="stylesheet">
     <link href="/css/home/blog/article.css" rel="stylesheet">
-    <title>${article.title}</title>
+    <#if article??>
+        <title>${article.title}</title>
+    <#else>
+        <title>浏览文章</title>
+    </#if>
+
 </head>
 <body>
 <div class="container page">
@@ -54,7 +59,7 @@
                             </div>
                             <div class="comments">
                                 <#list comments as comment>
-                                    <div class="row" style="margin-top: 10px;">
+                                    <div class="row single_comment">
                                         <div class="col-sm-1 glyphicon glyphicon-user comment_avatar"></div>
                                         <div class="col-md-1 comment_username">${comment.user.username}</div>
                                         <div class="col-md-10 comment_words remove_padding">${comment.comment_text}</div>

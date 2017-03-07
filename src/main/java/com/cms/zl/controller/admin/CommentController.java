@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -27,10 +28,10 @@ public class CommentController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView commitComment(@Valid CommentForm commentForm, BindingResult result, Principal principal) throws ControllerParamException {
+    public ModelAndView commitComment(@RequestParam(value = "kind") String kind, @Valid CommentForm commentForm, BindingResult result, Principal principal) throws ControllerParamException {
         if(result.hasErrors()) throw new ControllerParamException("提交评论参数错误");
         String article_id = commentForm.getArticle_id();
-        ModelAndView mav = new ModelAndView("redirect:/article?id=" + article_id);
+        ModelAndView mav = new ModelAndView("redirect:/article?id=" + article_id + "&kind=" + kind);
         commentService.create(commentForm.getComment(), commentForm.getArticle_id(), commentForm.getUser_id());
         return mav;
     }
