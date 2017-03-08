@@ -92,6 +92,31 @@
         </li>
 
         <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-link"></i>
+                <span class="menu-text"> 友链 </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="/admin/f_link/list">
+                        <i class="icon-double-angle-right"></i>
+                        友链列表
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/f_link/add">
+                        <i class="icon-double-angle-right"></i>
+                        添加友链
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
             <a href="typography.html">
                 <i class="icon-text-width"></i>
                 <span class="menu-text"> 评论管理 </span>

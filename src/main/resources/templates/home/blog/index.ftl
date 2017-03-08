@@ -22,8 +22,8 @@
 			<!-- 包括左侧边栏区以及正文区 -->
 			<div class="col-sm-12 col-md-12 remove_padding">
 				<div class="main">
-					<div class="side col-sm-3 col-md-3 remove_padding">
-						<div class="personal_information">
+					<div class="col-sm-3 col-md-3 remove_padding">
+						<div class="personal_information side">
 							<div class="side_label">
 								个人资料
 							</div>
@@ -45,7 +45,7 @@
 								</#if>
 							</div>
 						</div>
-						<div class="blog_topic">
+						<div class="blog_topic side">
 							<div class="side_label">
 								博文专题
 							</div>
@@ -55,6 +55,16 @@
 								</ul>
 							</div>
 						</div>
+                        <div class="friend_link side">
+                            <div class="side_label">
+                                友情链接
+                            </div>
+                            <div class="side_content">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
 					</div>
 					<div class="col-sm-9 col-md-9">
 						<div class="row">

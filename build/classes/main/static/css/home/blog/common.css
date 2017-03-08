@@ -162,15 +162,19 @@ body{
 }
 
 .side{
-	
-}
-
-.personal_information, .blog_topic{
 	background-color: #2D2929;
 	padding-top: 1px;
 }
 
+.personal_information{
+
+}
+
 .blog_topic{
+	margin-top: 30px;
+}
+
+.friend_link{
 	margin-top: 30px;
 }
 
